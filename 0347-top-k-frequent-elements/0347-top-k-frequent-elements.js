@@ -4,6 +4,9 @@
  * @return {number[]}
  */
 var topKFrequent = function(nums, k) {
+    if(nums.length === 1 && k === 1){
+        return [nums[0]];    
+    }
   const obj = {};
    nums.forEach((num) => {
        if(obj[num] === undefined){
@@ -18,7 +21,7 @@ var topKFrequent = function(nums, k) {
     for(let i = 0; i < k; i++){
         mostFrequentElement.push(parseInt(sortedTopKFrequent[i][0]))    
    }
- return mostFrequentElement;
+   return mostFrequentElement;
     
 //    const filteredToMostFrequentElement = Object.entries(nums).filter(num => {
         
